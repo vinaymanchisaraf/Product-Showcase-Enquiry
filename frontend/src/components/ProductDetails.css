@@ -1,0 +1,371 @@
+.product-details-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+  animation: fadeIn 0.3s ease;
+  backdrop-filter: blur(4px);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.product-details-modal {
+  background: white;
+  border-radius: 16px;
+  max-width: 1000px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  animation: slideUp 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.1);
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #333;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10;
+  backdrop-filter: blur(4px);
+}
+
+.close-button:hover {
+  background: rgba(0, 0, 0, 0.2);
+  transform: rotate(90deg);
+  color: #e74c3c;
+}
+
+.product-details-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  padding: 40px;
+}
+
+.product-details-image-section {
+  position: relative;
+}
+
+.product-main-image {
+  border-radius: 12px;
+  overflow: hidden;
+  background: linear-gradient(45deg, #f5f7fa 0%, #c3cfe2 100%);
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-details-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.product-main-image:hover .product-details-image {
+  transform: scale(1.02);
+}
+
+.product-image-badge {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.badge-category {
+  background: rgba(52, 152, 219, 0.9);
+  color: white;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  backdrop-filter: blur(4px);
+}
+
+.badge-stock {
+  background: rgba(46, 204, 113, 0.9);
+  color: white;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  backdrop-filter: blur(4px);
+}
+
+.product-details-info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.product-header {
+  margin-bottom: 10px;
+}
+
+.product-details-name {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0 0 12px 0;
+  line-height: 1.2;
+}
+
+.product-rating-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.rating-stars {
+  color: #f39c12;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+
+.rating-text {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.product-price-section {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 12px;
+  border-left: 4px solid #3498db;
+}
+
+.current-price {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #e74c3c;
+  margin-bottom: 8px;
+}
+
+.price-note {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.section-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0 0 16px 0;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.description-content {
+  color: #555;
+  line-height: 1.7;
+}
+
+.description-paragraph {
+  margin-bottom: 16px;
+}
+
+.description-paragraph:last-child {
+  margin-bottom: 0;
+}
+
+.features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.features-list li {
+  padding: 10px 0;
+  color: #555;
+  position: relative;
+  padding-left: 28px;
+}
+
+.features-list li:before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #27ae60;
+  font-weight: bold;
+}
+
+.product-actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.enquire-button {
+  flex: 1;
+  padding: 16px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.enquire-button.primary {
+  background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+  color: white;
+  border: none;
+}
+
+.enquire-button.primary:hover {
+  background: linear-gradient(135deg, #27ae60 0%, #219653 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(46, 204, 113, 0.3);
+}
+
+.enquire-button.secondary {
+  background: white;
+  color: #333;
+  border: 2px solid #ddd;
+}
+
+.enquire-button.secondary:hover {
+  border-color: #3498db;
+  background: #f8f9fa;
+  transform: translateY(-2px);
+}
+
+.button-icon {
+  font-size: 1.2rem;
+}
+
+.product-meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.meta-label {
+  font-size: 0.85rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.meta-value {
+  font-size: 1rem;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.meta-value.available {
+  color: #27ae60;
+}
+
+@media (max-width: 900px) {
+  .product-details-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 30px;
+  }
+  
+  .product-main-image {
+    aspect-ratio: 16/9;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-details-modal {
+    max-height: 95vh;
+  }
+  
+  .product-details-content {
+    padding: 24px;
+    gap: 24px;
+  }
+  
+  .product-details-name {
+    font-size: 1.7rem;
+  }
+  
+  .current-price {
+    font-size: 2rem;
+  }
+  
+  .product-actions {
+    flex-direction: column;
+  }
+  
+  .product-meta {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-details-overlay {
+    padding: 10px;
+  }
+  
+  .product-details-content {
+    padding: 20px;
+  }
+  
+  .product-details-name {
+    font-size: 1.5rem;
+  }
+  
+  .close-button {
+    top: 10px;
+    right: 10px;
+    width: 36px;
+    height: 36px;
+    font-size: 24px;
+  }
+  
+  .section-title {
+    font-size: 1.2rem;
+  }
+}

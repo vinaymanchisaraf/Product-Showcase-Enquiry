@@ -1,0 +1,133 @@
+.pagination {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid #eaeaea;
+}
+
+.pagination-info {
+  font-size: 0.95rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.pagination-list {
+  display: flex;
+  list-style: none;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pagination-button {
+  min-width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 12px;
+  border: 1px solid #ddd;
+  background: white;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pagination-button:hover:not(.disabled):not(.active) {
+  background: #f5f5f5;
+  border-color: #bbb;
+  transform: translateY(-1px);
+}
+
+.pagination-button.active {
+  background: #3498db;
+  color: white;
+  border-color: #3498db;
+  font-weight: 600;
+  box-shadow: 0 2px 4px rgba(52, 152, 219, 0.2);
+}
+
+.pagination-button.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: #f9f9f9;
+}
+
+.pagination-button.disabled:hover {
+  transform: none;
+  background: #f9f9f9;
+}
+
+.pagination-prev,
+.pagination-next {
+  gap: 6px;
+  padding: 0 16px;
+}
+
+.pagination-arrow {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.pagination-ellipsis {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  color: #666;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .pagination-list {
+    gap: 6px;
+  }
+  
+  .pagination-button {
+    min-width: 36px;
+    height: 36px;
+    padding: 0 10px;
+    font-size: 0.9rem;
+  }
+  
+  .pagination-prev,
+  .pagination-next {
+    padding: 0 12px;
+    font-size: 0.9rem;
+  }
+  
+  .pagination-ellipsis {
+    min-width: 36px;
+    height: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pagination {
+    gap: 12px;
+  }
+  
+  .pagination-list {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .pagination-button:not(.pagination-prev):not(.pagination-next) {
+    display: none;
+  }
+  
+  .pagination-prev,
+  .pagination-next {
+    flex: 1;
+    justify-content: center;
+  }
+}
